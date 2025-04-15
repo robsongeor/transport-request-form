@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="javascript.js defer"></script>
 </head>
+
 <body>
     <div class="container">
         <h1>Transport Request Form </h1>
@@ -16,11 +18,11 @@
                 <h2>Details</h2>
                 <div>
                     <label for="requestor-name">Requestor Name</label>
-                    <input name="requestor-name"type="text" id="requestor-name">
+                    <input name="requestor-name" type="text" id="requestor-name">
                 </div>
                 <div>
                     <label for="request-date">Request Date</label>
-                    <input name="request-date" type="date"  id="request-date">
+                    <input name="request-date" type="date" id="request-date">
                 </div>
                 <div>
                     <label for="transport-date">Transport Date</label>
@@ -31,7 +33,7 @@
                     <input name="transport-company" type="text" id="transport-company">
                 </div>
             </div>
-            
+
             <div class="unit-list"></div>
 
             <div class="transport-from">
@@ -58,8 +60,10 @@
                 </div>
                 <div>
                     <label for="additional-instructions-from">Additional Instructions</label>
-                    <input type="text" name="additional-instructions-from" id="additional-instructions-from">
-                </div></div>
+                    <textarea name="additional-instructions-from" id="additional-instructions-from"></textarea>
+
+                </div>
+            </div>
 
             <div class="transport-to">
                 <h2>Deliver To</h2>
@@ -85,9 +89,11 @@
                 </div>
                 <div>
                     <label for="additional-instructions-to">Additional Instructions</label>
-                    <input type="text" name="additional-instructions-to" id="additional-instructions-to">
-                </div> </div>
+                    <textarea name="additional-instructions-to" id="additional-instructions-to"></textarea>
+                </div>
+            </div>
         </form>
     </div>
 </body>
+
 </html>
