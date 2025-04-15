@@ -60,5 +60,5 @@
 
   .container > form > div *{
     flex: 1;
-  
+    display: flex;
   }
