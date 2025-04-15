@@ -46,18 +46,26 @@
   }
 
   /* CSS STARTS HERE */
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
   .container > form {
     display: flex;
     width: 80vw;
     flex-direction: column;
   }
 
+  /* Form Sections */
   .container > form > div {
     display: flex;
     flex-direction: column;
     padding: 10px;
   }
 
+  /* Input and Label divs */
   .container > form > div *{
     flex: 1;
     display: flex;
