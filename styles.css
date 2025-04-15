@@ -17,6 +17,8 @@
     line-height: 1.5;
     /* 5. Improve text rendering */
     -webkit-font-smoothing: antialiased;
+
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
   /* 6. Improve media defaults */
   img, picture, video, canvas, svg {
@@ -48,8 +50,10 @@
   /* CSS STARTS HERE */
 .container{
     height: 100vh;
+    width: 100vw;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
   .container > form {
@@ -63,6 +67,7 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
+    gap: 10px
   }
 
   /* Input and Label divs */
