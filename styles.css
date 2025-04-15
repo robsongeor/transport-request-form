@@ -75,3 +75,24 @@
     flex: 1;
     display: flex;
   }
+
+  /* Selects container for left and right parent */
+  .container > form > .request-details > div{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  /* Selects left and right containers */
+ .request-details > div > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    
+    gap: inherit;
+  }
+
+  .request-details>.left{
+    display: flex;
+    flex-direction: column;
+  }
