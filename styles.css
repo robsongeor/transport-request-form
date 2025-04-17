@@ -108,7 +108,8 @@ label {
 
 
 input,
-select {
+select,
+textarea {
   border: 10px solid rgb(245, 245, 245);
   background-color: rgb(245, 245, 245);
   border-radius: .2rem;
@@ -120,6 +121,10 @@ select {
   letter-spacing: .02rem;
   margin: .1rem;
   margin-bottom: 1.4rem;
+}
+
+textarea {
+  height: 4rem;
 }
 
 hr {
