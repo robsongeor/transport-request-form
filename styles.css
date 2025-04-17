@@ -1,98 +1,181 @@
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  /* 2. Remove default margin */
-  * {
-    margin: 0;
-  }
-  /* 3. Enable keyword animations */
-  @media (prefers-reduced-motion: no-preference) {
-    html {
-      interpolate-size: allow-keywords;
-    }
-  }
-  body {
-    /* 4. Add accessible line-height */
-    line-height: 1.5;
-    /* 5. Improve text rendering */
-    -webkit-font-smoothing: antialiased;
-
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  }
-  /* 6. Improve media defaults */
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  /* 7. Inherit fonts for form controls */
-  input, button, textarea, select {
-    font: inherit;
-  }
-  /* 8. Avoid text overflows */
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  /* 9. Improve line wrapping */
-  p {
-    text-wrap: pretty;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    text-wrap: balance;
-  }
-  /*
-    10. Create a root stacking context
-  */
-  #root, #__next {
-    isolation: isolate;
-  }
-
-  /* CSS STARTS HERE */
-.container{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-  .container > form {
-    display: flex;
-    width: 80vw;
-    flex-direction: column;
-  }
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
 
-  /* Form Sections */
-  .container > form > div {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    gap: 10px
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
   }
+}
 
-  /* Input and Label divs */
-  .container > form > div *{
-    flex: 1;
-    display: flex;
-  }
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
 
-  /* Selects container for left and right parent */
-  .container > form > .request-details > div{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-  }
+  font-family: "Inter", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
 
-  /* Selects left and right containers */
- .request-details > div > div {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    
-    gap: inherit;
-  }
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
 
-  .request-details>.left{
-    display: flex;
-    flex-direction: column;
-  }
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    10. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* CSS STARTS HERE */
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.inter-font {}
+
+.container {
+  flex: 1;
+  max-width: 700px;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+}
+
+label {
+  font-weight: 500;
+  font-size: .65rem;
+  padding: 0;
+  letter-spacing: .01rem;
+
+  margin-bottom: .4rem;
+
+}
+
+
+
+input,
+select {
+  border: 10px solid rgb(245, 245, 245);
+  background-color: rgb(245, 245, 245);
+  border-radius: .2rem;
+  color: rgb(73, 73, 73);
+  font-weight: 400;
+  font-size: .70rem;
+  height: 2.5rem;
+
+  letter-spacing: .02rem;
+  margin: .1rem;
+  margin-bottom: 1.4rem;
+}
+
+hr {
+  margin: 1rem 0;
+  border: 0;
+  border-top: 1px solid rgb(224, 224, 224);
+}
+
+h3 {
+  font-size: .9rem;
+  margin-top: 2rem;
+  color: rgb(73, 73, 73);
+}
+
+/* DETAILS SECTION */
+.request-details>div>.left {
+  width: 100%;
+  gap: 1rem;
+}
+
+.request-details>div>.left>.left,
+.request-details>div>.left>.right,
+.request-details>div>.left>.check {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.request-details>div>.left>.check,
+.request-details>div>.left>.right {
+  flex: .5;
+}
+
+/* TRANSPORT FROM SECTION */
+.transport-from, .deliver-to{
+
+  width: 100%;
+  gap: 1rem;
+}
+
+.transport-from > div, .deliver-to > div{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-split {
+  display: flex;
+  gap: 1rem;
+}
+
+.flex-split > *{
+  flex: 1;
+}

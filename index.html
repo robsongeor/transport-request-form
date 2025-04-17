@@ -7,94 +7,102 @@
     <title>Transport Request Form</title>
     <link rel="stylesheet" href="styles.css">
     <script src="javascript.js" defer></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Transport Request Form </h1>
+        <h1>TRANSPORT REQUEST FORM</h1>
 
         <form action="" method="post" class="transport-request-form">
             <div class="request-details">
-                <h2>Details</h2>
+                <h3>DETAILS</h3>
+                <hr>
                 <div>
                     <div class="left">
-                        <div>
-                            <label for="requestor-name">Requestor Name</label>
+                        <div class="left">
+                            <label for="requestor-name"> Requested by</label>
                             <input name="requestor-name" type="text" id="requestor-name">
+
+                            <label for="transport-company">Transport Company</label>
+                            <input name="transport-company" type="text" id="transport-company">
+
+
                         </div>
-                        <div>
+
+                        <div class="right">
                             <label for="request-date">Request Date</label>
                             <input name="request-date" type="date" id="request-date">
-                        </div>
-                        <div>
+
                             <label for="transport-date">Transport Date</label>
                             <input name="transport-date" type="date" id="transport-date">
                         </div>
-                        <div>
-                            <label for="transport-company">Transport Company</label>
-                            <input name="transport-company" type="text" id="transport-company">
+
+                        <div class="check">
+                            <label for="request-type">Request Type</label>
+                            <select name="request-type" id="request-type">
+                                <option selected disabled>choose one</option>
+                                <option value="">Sale</option>
+                                <option value="">Rental</option>
+                                <option value="">Dehire</option>
+                                <option value="">Relocation</option>
+                                <option value="">Internal</option>
+                                <option value="">Demo / Loan</option>
+                            </select>
+
+                            <label for="order-number">Order Number</label>
+                            <input name="order-number" type="text" id="order-number">
+
+
                         </div>
+
                     </div>
-                    <div class="right">
-                        <div>
-                            <label for="sale">Sale</label>
-                            <input type="checkbox" name="job-type" id="sale">
-                        </div>
-                        <div>
-                            <label for="rental">Rental</label>
-                            <input type="checkbox" name="job-type" id="rental">
-                        </div>
-                        <div>
-                            <label for="dehire">Dehire</label>
-                            <input type="checkbox" name="job-type" id="dehire">
-                        </div>
-                        <div>
-                            <label for="relocation">Relocation</label>
-                            <input type="checkbox" name="job-type" id="relocation">
-                        </div>
-                        <div>
-                            <label for="internal">Internal</label>
-                            <input type="checkbox" name="job-type" id="internal">
-                        </div>
-                        <div>
-                            <label for="demo-loan">Demo / Loan</label>
-                            <input type="checkbox" name="job-type" id="demo-loan">
-                        </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    </div>
+
                 </div>
             </div>
 
-            <div class="unit-list"></div>
+            <div class="unit-list">
+                <h3>UNITS</h3>
+                <hr>
+            </div>
 
             <div class="transport-from">
-                <h2>Transport From</h2>
+                <h3>TRANSPORT FROM</h3>
+                <hr>
                 <div>
-                    <label for="company-from">Company</label>
-                    <input type="text" name="company-from" id="company-from">
+                    <div class="input-label">
+                        <label for="company-from">Company</label>
+                        <input type="text" name="company-from" id="company-from">
+                    </div>
+
+                    <div class="input-label">
+                        <label for="address-from-street">Address</label>
+                        <input type="text" name="address-from-street" id="address-from-street" value="Steet address">
+                        <input type="text" name="address-from-town" id="address-from-town" value="Town / City">
+                    </div>
+
+                    <div class="input-label">
+                        <label for="contact-name-from">Contact Name</label>
+                        <input type="text" name="contact-name-from" id="contact-name-from">
+                    </div>
+
+                    <div class="flex-split">
+                        <div class="input-label">
+                            <label for="contact-email-from">Email</label>
+                            <input type="email" name="contact-email-from" id="contact-email-from">
+                        </div>
+
+                        <div class="input-label">
+                            <label for="contact-phone-from">Phone</label>
+                            <input type="tel" name="contact-phone-from" id="contact-phone-from">
+                        </div>
+                    </div>
+
                 </div>
-                <div>
-                    <label for="address-from">Address</label>
-                    <input type="text" name="address-from" id="address-from">
-                </div>
-                <div>
-                    <label for="contact-name-from">Name</label>
-                    <input type="text" name="contact-name-from" id="contact-name-from">
-                </div>
-                <div>
-                    <label for="contact-email-from">Email</label>
-                    <input type="email" name="contact-email-from" id="contact-email-from">
-                </div>
-                <div>
-                    <label for="contact-phone-from">Phone</label>
-                    <input type="tel" name="contact-phone-from" id="contact-phone-from">
-                </div>
-                <div>
+                <div class="input-label">
                     <label for="additional-instructions-from">Additional Instructions</label>
                     <textarea name="additional-instructions-from" id="additional-instructions-from"></textarea>
 
@@ -102,32 +110,45 @@
             </div>
 
             <div class="transport-to">
-                <h2>Deliver To</h2>
+                <h3>DELIVER TO</h3>
+                <hr>
                 <div>
-                    <label for="company-to">Company</label>
-                    <input type="text" name="company-to" id="company-to">
+                    <div class="input-label">
+                        <label for="company-from">Company</label>
+                        <input type="text" name="company-from" id="company-from">
+                    </div>
+
+                    <div class="input-label">
+                        <label for="address-from-street">Address</label>
+                        <input type="text" name="address-from-street" id="address-from-street" value="Steet address">
+                        <input type="text" name="address-from-town" id="address-from-town" value="Town / City">
+                    </div>
+
+                    <div class="input-label">
+                        <label for="contact-name-from">Contact Name</label>
+                        <input type="text" name="contact-name-from" id="contact-name-from">
+                    </div>
+
+                    <div class="flex-split">
+                        <div class="input-label">
+                            <label for="contact-email-from">Email</label>
+                            <input type="email" name="contact-email-from" id="contact-email-from">
+                        </div>
+
+                        <div class="input-label">
+                            <label for="contact-phone-from">Phone</label>
+                            <input type="tel" name="contact-phone-from" id="contact-phone-from">
+                        </div>
+                    </div>
+
                 </div>
-                <div>
-                    <label for="address-to">Address</label>
-                    <input type="text" name="address-to" id="address-to">
-                </div>
-                <div>
-                    <label for="contact-name-to">Name</label>
-                    <input type="text" name="contact-name-to" id="contact-name-to">
-                </div>
-                <div>
-                    <label for="contact-email-to">Email</label>
-                    <input type="email" name="contact-email-to" id="contact-email-to">
-                </div>
-                <div>
-                    <label for="contact-phone-to">Phone</label>
-                    <input type="tel" name="contact-phone-to" id="contact-phon e-to">
-                </div>
-                <div>
-                    <label for="additional-instructions-to">Additional Instructions</label>
-                    <textarea name="additional-instructions-to" id="additional-instructions-to"></textarea>
+                <div class="input-label">
+                    <label for="additional-instructions-from">Additional Instructions</label>
+                    <textarea name="additional-instructions-from" id="additional-instructions-from"></textarea>
+
                 </div>
             </div>
+
         </form>
     </div>
 </body>
