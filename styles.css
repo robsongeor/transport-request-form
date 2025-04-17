@@ -83,11 +83,11 @@ body {
   justify-content: center;
 }
 
-.inter-font {}
 
 .container {
   flex: 1;
   max-width: 700px;
+  font-family: "Inter", sans-serif;
 }
 
 .left {
@@ -216,7 +216,7 @@ button {
   justify-content: flex-start;
 
   align-items: baseline;
- 
+  
 }
 
 .unit-row>* {
@@ -226,7 +226,16 @@ button {
  padding: 0;
  border: 0px solid black;
  height: 2rem;
+ padding-right: .5rem;
 
+
+}
+
+.unit-row>input, .unit-row>select {
+ padding-right: 0;
+ padding-left: .5rem;
+ font-family: "Roboto Mono", monospace;
+ 
 }
 
 .unit-row>.two {
@@ -238,6 +247,8 @@ button {
   
   justify-content: flex-end;
 }
+
+
 
 .delete-unit {
   max-width: 1.5rem;
