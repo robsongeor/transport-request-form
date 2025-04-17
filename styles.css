@@ -210,7 +210,7 @@ button {
 }
 
 /* UNIT ROWS */
-.unit-row {
+.unit-row, .unit-label {
   
   display: flex;
   justify-content: flex-start;
@@ -219,7 +219,7 @@ button {
   
 }
 
-.unit-row>* {
+.unit-row>*, .unit-label>*{
   min-width: 0;
   flex: 1;
  margin: 0.1rem;
@@ -238,7 +238,7 @@ button {
  
 }
 
-.unit-row>.two {
+.unit-row>.two, .unit-label>.two {
   flex: 2;
 }
 
