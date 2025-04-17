@@ -15,8 +15,10 @@
 
 <body>
     <div class="container">
+        
         <h1>TRANSPORT REQUEST FORM</h1>
-
+        <hr>
+        <br>
         <form action="" method="post" class="transport-request-form">
             <div class="request-details">
                 <h3>DETAILS</h3>
@@ -67,10 +69,42 @@
             <div class="unit-list">
                 <h3>UNITS</h3>
                 <hr>
+
+                <div class="unit-row">
+                    <label for="job">Job</label>
+                    <label for="fleet">Fleet</label>
+                    <label for="make">Make</label>
+                    <label for="model">Model</label>
+                    <label class="two" for="serial">Serial</label>
+                    <label for="other">Type</label>
+                    <div class="delete-unit"></div>
+
+                </div>
+
+                <div class="unit-row">
+                    <input type="text" name="company-from" id="company-from">
+                    <input type="text" name="company-from" id="company-from">
+                    <input type="text" name="company-from" id="company-from">
+                    <input type="text" name="company-from" id="company-from">
+                    <input type="text" name="company-from" id="company-from" class="two">
+                    <select name="request-type" id="request-type">
+                        <option selected disabled>Choose One</option>
+                        <option value="">Pick Up</option>
+                        <option value="">Drop Off</option>
+                    </select>
+                    <button class="delete-unit">X</button>
+                </div>
+
+                <div class="button-row">
+                    <button class="add-new-unit">ADD</button>
+                    <div class="delete-unit"></div>
+                </div>
+                
             </div>
 
             <div class="transport-from">
                 <h3>TRANSPORT FROM</h3>
+                <h4> - PICK UP </h4>
                 <hr>
                 <div>
                     <div class="input-label">
@@ -110,7 +144,8 @@
             </div>
 
             <div class="transport-to">
-                <h3>DELIVER TO</h3>
+                <h3>DELIVER TO </h3>
+                <h4> - DROP OFF</h4>
                 <hr>
                 <div>
                     <div class="input-label">
