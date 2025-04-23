@@ -1,3 +1,4 @@
+// UNIT LIST HANDLER //
 (function () {
     let units = {
         units: [],
@@ -11,6 +12,7 @@
         },
         initDefaultRow() {
             this.units.push(this.unitRowHTML);
+            this.setInputNames(this.unitRowHTML, "");
             this.bindDeleteButton();
         },
         cacheDom: function () {
@@ -23,7 +25,7 @@
         },
         addUnit: function () {
             let newElement = this.unitRowHTML.cloneNode(true)
-            
+            this.setInputNames(newElement, this.units.length)
             this.units.push(newElement);
             this.resetInputValues(newElement);
             this.bindDeleteButton();
@@ -53,11 +55,18 @@
             let deleteButton = this.units[this.units.length - 1].querySelector("button");
             deleteButton.addEventListener("dblclick", this.deleteUnit.bind(this))
         },
-        resetInputValues: function (element){
+        resetInputValues: function (element) {
             element.childNodes.forEach(
                 (node) => {
                     isNodeOfType(node, "INPUT") ? node.value = "" :
-                    isNodeOfType(node, "SELECT") ?  node.value = node.options[0].textContent: ""
+                        isNodeOfType(node, "SELECT") ? node.value = node.options[0].textContent : ""
+                })
+        },
+        setInputNames: function (element, index) {
+            element.childNodes.forEach(
+                (node) => {
+                    isNodeOfType(node, "INPUT") ? node.name += index :
+                        isNodeOfType(node, "SELECT") ? node.name += index : ""
                 })
         }
 
@@ -66,7 +75,24 @@
     units.init();
 })();
 
-function isNodeOfType(node, ...typeStrings){
+
+const formData = function() {
+    const formData = new FormData(document.getElementById("form"))
+    let obj = {};
+
+    const fd = function() {
+        for (const [key, value] of formData) {
+            obj[key] = value;
+        }
+
+        console.table(obj)
+    }
+
+    return {fd};
+}
+
+
+function isNodeOfType(node, ...typeStrings) {
     return typeStrings.some(
         (typeString) => node.nodeName === typeString
     )

@@ -20,7 +20,7 @@
         <h1>TRANSPORT REQUEST FORM</h1>
         <hr>
         <br>
-        <form action="" method="post" class="transport-request-form">
+        <form action="" method="post" id="form" name="TransportRequestForm" class="transport-request-form">
             <div class="request-details">
                 <h3>DETAILS</h3>
                 <hr>
@@ -83,11 +83,11 @@
                 </div>
 
                 <div class="unit-row" id="unit-row-data-element">
-                    <input type="text" name="company-from" id="company-from">
-                    <input type="text" name="company-from" id="company-from">
-                    <input type="text" name="company-from" id="company-from">
-                    <input type="text" name="company-from" id="company-from">
-                    <input type="text" name="company-from" id="company-from" class="two">
+                    <input type="text" name="job" id="job">
+                    <input type="text" name="fleet" id="fleet">
+                    <input type="text" name="make" id="make">
+                    <input type="text" name="model" id="model">
+                    <input type="text" name="serial" id="serial" class="two">
                     <select name="request-type" id="request-type">
                         <option selected disabled>Choose One</option>
                         <option value="">Pick Up</option>
@@ -150,40 +150,45 @@
                 <hr>
                 <div>
                     <div class="input-label">
-                        <label for="company-from">Company</label>
-                        <input type="text" name="company-from" id="company-from">
+                        <label for="transport-to">Company</label>
+                        <input type="text" name="transport-to" id="transport-to">
                     </div>
 
                     <div class="input-label">
-                        <label for="address-from-street">Address</label>
-                        <input type="text" name="address-from-street" id="address-from-street" value="Steet address">
-                        <input type="text" name="address-from-town" id="address-from-town" value="Town / City">
+                        <label for="address-to-street">Address</label>
+                        <input type="text" name="address-to-street" id="address-to-street" placeholder="Steet address">
+                        <input type="text" name="address-to-town" id="address-to-town" placeholder="Town / City">
                     </div>
 
                     <div class="input-label">
-                        <label for="contact-name-from">Contact Name</label>
-                        <input type="text" name="contact-name-from" id="contact-name-from">
+                        <label for="contact-name-to">Contact Name</label>
+                        <input type="text" name="contact-name-to" id="contact-name-to">
                     </div>
 
                     <div class="flex-split">
                         <div class="input-label">
-                            <label for="contact-email-from">Email</label>
-                            <input type="email" name="contact-email-from" id="contact-email-from">
+                            <label for="contact-email-to">Email</label>
+                            <input type="email" name="contact-email-to" id="contact-email-to">
                         </div>
 
                         <div class="input-label">
-                            <label for="contact-phone-from">Phone</label>
-                            <input type="tel" name="contact-phone-from" id="contact-phone-from">
+                            <label for="contact-phone-to">Phone</label>
+                            <input type="tel" name="contact-phone-to" id="contact-phone-to">
                         </div>
                     </div>
 
                 </div>
                 <div class="input-label">
-                    <label for="additional-instructions-from">Additional Instructions</label>
-                    <textarea name="additional-instructions-from" id="additional-instructions-from"></textarea>
+                    <label for="additional-instructions-to">Additional Instructions</label>
+                    <textarea name="additional-instructions-to" id="additional-instructions-to"></textarea>
 
                 </div>
             </div>
+
+            <div>
+                <button type="button" class="submit">Submit</button>   
+            </div>
+            
 
         </form>
     </div>
