@@ -48,12 +48,12 @@
                             <label for="request-type">Request Type</label>
                             <select name="request-type" id="request-type">
                                 <option selected disabled>choose one</option>
-                                <option value="">Sale</option>
-                                <option value="">Rental</option>
-                                <option value="">Dehire</option>
-                                <option value="">Relocation</option>
-                                <option value="">Internal</option>
-                                <option value="">Demo / Loan</option>
+                                <option value="sale">Sale</option>
+                                <option value="rental">Rental</option>
+                                <option value="dehire">Dehire</option>
+                                <option value="relocation">Relocation</option>
+                                <option value="internal">Internal</option>
+                                <option value="demo-loan">Demo / Loan</option>
                             </select>
 
                             <label for="order-number">Order Number</label>
@@ -88,10 +88,10 @@
                     <input type="text" name="make" id="make">
                     <input type="text" name="model" id="model">
                     <input type="text" name="serial" id="serial" class="two">
-                    <select name="request-type" id="request-type">
+                    <select name="action" id="action">
                         <option selected disabled>Choose One</option>
-                        <option value="">Pick Up</option>
-                        <option value="">Drop Off</option>
+                        <option value="pickup">Pick Up</option>
+                        <option value="dropoff">Drop Off</option>
                     </select>
                     <button type="button" class="delete-unit">X</button>
                 </div>

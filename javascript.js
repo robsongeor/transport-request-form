@@ -75,23 +75,33 @@
     units.init();
 })();
 
+// returns form inputs as json string // 
+const formData = function () {
+    let formDataObject = {
+        rawKeyValues: {},
+        jsonData: "",
 
-const formData = function() {
-    const formData = new FormData(document.getElementById("form"))
-    let obj = {};
-
-    const fd = function() {
-        for (const [key, value] of formData) {
-            obj[key] = value;
+        init: function () {
+            this.formData = new FormData(document.getElementById("form"));
+            this.setRawData();
+            this.setJsonData();
+        },
+        setRawData: function () {
+            for (const [key, value] of this.formData) {
+                this.rawKeyValues[key] = value;
+            }
+        },
+        setJsonData: function () {
+            this.jsonData = JSON.stringify(this.rawKeyValues);
         }
-
-        console.table(obj)
     }
 
-    return {fd};
+    formDataObject.init();
+
+    return formDataObject.jsonData;
 }
 
-
+// helper function
 function isNodeOfType(node, ...typeStrings) {
     return typeStrings.some(
         (typeString) => node.nodeName === typeString
