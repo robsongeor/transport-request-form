@@ -1,33 +1,73 @@
-const addUnitButtonRow = document.querySelector(".button-row")
-const addUnitButton = document.getElementById("add-new-unit");
+(function () {
+    let units = {
+        units: [],
 
-const unitListElement = document.getElementById("unit-row-data-element")
-const unitListContainer = document.getElementById("unit-list")
+        init: function () {
+            this.cacheDom();
+            this.bindEvents();
+            //Add first element
+            this.initDefaultRow();
 
-let deleteArr = [];
+        },
+        initDefaultRow() {
+            this.units.push(this.unitRowHTML);
+            this.bindDeleteButton();
+        },
+        cacheDom: function () {
+            this.unitRowHTML = document.getElementById("unit-row-data-element");
+            this.addButton = document.getElementById("add-new-unit");
+            this.unitListContainer = document.getElementById("unit-list");
+        },
+        bindEvents: function () {
+            this.addButton.addEventListener("click", this.addUnit.bind(this));
+        },
+        addUnit: function () {
+            let newElement = this.unitRowHTML.cloneNode(true)
+            
+            this.units.push(newElement);
+            this.resetInputValues(newElement);
+            this.bindDeleteButton();
+            this.render();
+        },
+        deleteUnit: function (e) {
+            //Filter out divs that arent unit input divs
+            let rowsOnly = [...this.unitListContainer.children].filter(
+                (element) => element.classList.contains("unit-row")
+            )
+            let index = rowsOnly.indexOf(e.target.parentElement)
 
-//Create new unit item to unit list
+            //Remove from array
+            this.units.splice(index, 1);
 
-addUnitButton.addEventListener("click", () => {
-    let newElement = unitListElement.cloneNode(true);
+            //Remove from dom
+            this.unitListContainer.removeChild(e.target.parentElement)
 
-    newElement.childNodes.forEach(function (currentValue) {
-        currentValue.nodeName === 'SELECT' ?
-            currentValue.value = "Choose One" : currentValue.value = "";
-        ;
+        },
+        render: function () {
+            this.unitListContainer.insertBefore(
+                this.units[this.units.length - 1],
+                this.unitListContainer.lastChild.previousSibling
+            )
+        },
+        bindDeleteButton: function () {
+            let deleteButton = this.units[this.units.length - 1].querySelector("button");
+            deleteButton.addEventListener("dblclick", this.deleteUnit.bind(this))
+        },
+        resetInputValues: function (element){
+            element.childNodes.forEach(
+                (node) => {
+                    isNodeOfType(node, "INPUT") ? node.value = "" :
+                    isNodeOfType(node, "SELECT") ?  node.value = node.options[0].textContent: ""
+                })
+        }
 
-    })
+    };
 
-  
-    //Delete button
-    let deleteButton = newElement.querySelector("button")
-    deleteButton.addEventListener("dblclick", () => newElement.remove())
+    units.init();
+})();
 
-    unitListContainer.insertBefore(newElement, addUnitButtonRow);
-
-   
-   
-})
-
-//Delete this unit item
-
+function isNodeOfType(node, ...typeStrings){
+    return typeStrings.some(
+        (typeString) => node.nodeName === typeString
+    )
+}
